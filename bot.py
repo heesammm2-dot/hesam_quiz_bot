@@ -151,7 +151,7 @@ async def error_handler(update: object, context: ContextTypes.DEFAULT_TYPE):
     log.exception("Unhandled bot error", exc_info=context.error)
 
 def main():
-  print(f"DEBUG_TOKEN: '{config.BOT_TOKEN}'")
+    print(f"DEBUG_TOKEN: '{config.BOT_TOKEN}'")
     database.init_db()
     app = Application.builder().token(config.BOT_TOKEN).build()
     app.add_handler(CommandHandler("start", start))
